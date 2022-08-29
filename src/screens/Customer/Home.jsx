@@ -1,7 +1,17 @@
 import { useState } from "react";
+import styled from "styled-components";
 
-import Card from "../../components/Card/Card";
-import Product from "../../components/Product/Product";
+import Card from "../../components/Card";
+import Product from "../../components/Product";
+
+const StyledHome = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+`;
 
 const Home = () => {
   const [products, updateProducts] = useState([
@@ -35,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <div className="Home">
+    <StyledHome className="Home">
       <Card>
         {products.map((product, idx) => (
           <Product
@@ -47,7 +57,7 @@ const Home = () => {
           />
         ))}
       </Card>
-    </div>
+    </StyledHome>
   );
 };
 
